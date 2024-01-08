@@ -15,8 +15,11 @@ export default function Nav({ filtreTodo, filterSelected }) {
         justifyContent: 'center',
         alignItems: 'center',
         borderWidth: 1,
+        borderColor : '#eee'
+
+        
     }
-    
+
     return (
         <View style={styles.nav} >
             <TouchableNativeFeedback
@@ -25,7 +28,12 @@ export default function Nav({ filtreTodo, filterSelected }) {
                     ...buttonStyle,
                     backgroundColor: filterSelected === 'all' ? '#54aeff' : '#fff'
                 }}>
-                    <Text>Tout</Text>
+                    <Text style={{
+                        color: filterSelected === 'all' ? '#fff' : '#000',
+                        fontWeight: filterSelected  === 'all' ?'bold': ''
+                    }}>
+                        Tout
+                    </Text>
                 </View>
             </TouchableNativeFeedback>
 
@@ -36,7 +44,13 @@ export default function Nav({ filtreTodo, filterSelected }) {
                     backgroundColor: filterSelected === 'completed' ? '#54aeff' : '#fff'
                 }}
                 >
-                    <Text>Effectuées</Text>
+                    <Text style={{
+                        color: filterSelected === 'completed' ? '#fff' : '#000',
+                        fontWeight: filterSelected  === 'completed' ?'bold': ''
+                    }}  >
+                        Effectuées
+                    </Text>
+
                 </View>
             </TouchableNativeFeedback>
 
@@ -47,8 +61,12 @@ export default function Nav({ filtreTodo, filterSelected }) {
                     ...buttonStyle,
                     backgroundColor: filterSelected === 'pendding' ? '#54aeff' : '#fff'
                 }}>
-
-                    <Text> A effectuées</Text>
+                    <Text style={{
+                        color: filterSelected === 'pendding' ? '#fff' : '#000',
+                        fontWeight: filterSelected  === 'pendding' ?'bold': ''
+                    }} >
+                        A effectuées
+                    </Text>
                 </View>
             </TouchableNativeFeedback>
 
